@@ -26,6 +26,7 @@ const scoreEventDec = (e) => {
 
 const startGame = (time) => {
     points.innerHTML = 0;
+    i = 0;
     intervalId = setInterval(() => {
         randNum = Math.floor(Math.random() * 9);
 
@@ -60,14 +61,17 @@ let showTimeInterval
 const showGameTime = () => {
     let timer = 60;
     showTimeInterval = setInterval(() => {
+        console.log("time interval");
         timer = --timer;
         time.innerHTML = timer + "s";
     }, 1000);
 }
 
+let gameTimeOut
+
 const gameTime = () => {
     showGameTime()
-    setTimeout(() => {
+   gameTimeOut = setTimeout(() => {
         stopGame();
         console.log("times up");
         stopBtn.classList.remove('display');
@@ -86,6 +90,7 @@ startBtn.addEventListener('click', () => {
 const stopGame = () => {
     clearInterval(intervalId);
     clearInterval(showTimeInterval);
+    clearTimeout(gameTimeOut);
 }
 
 stopBtn.addEventListener('click', () => {
@@ -103,12 +108,12 @@ let changeDificulty = () => {
     console.log(selectedValue);
     if (selectedValue == "Easy") {
         console.log("easy");
-        startGame(1200);
+        startGame(1250);
     } else if (selectedValue == "Medium") {
         console.log("Medium");
-        startGame(1000);
+        startGame(1100);
     } else if (selectedValue == "Hard") {
         console.log("Hard");
-        startGame(800);
+        startGame(900);
     }
 }
