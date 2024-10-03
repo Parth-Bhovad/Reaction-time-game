@@ -14,10 +14,12 @@
 }
 
 .container {
-    width: 31vw;
-    height: 31vw;
+    width: 35vw;
+    height: 35vw;
     background-color: #1d3557;
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
     gap: 2px;
 }
@@ -90,16 +92,16 @@
 .level {
     background-color: #A8DADC;
     height: 40px;
-    width: 60px;
+    width: 90px;
     border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-/* select{
-    width: 20px;
-} */
+select{
+    width: 52px;
+}
 
 .time {
     background-color: #A8DADC;
@@ -127,4 +129,16 @@
 
 .colorChange-to-black{
     background-color: black;
+}
+
+@media (max-width:800px) {
+    .container {
+        width: 65vw;
+        height: 65vw;
+    }
+    
+    .box {
+        height: 20vw;
+        width: 20vw;
+    }
 }
